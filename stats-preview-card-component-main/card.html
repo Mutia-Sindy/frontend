@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card</title>
+    <style>
+        @font-face{
+            font-family: "Inter";
+         src: url('design/fonts/Inter-VariableFont_opsz,wght.ttf');
+        }
+        @font-face {
+            font-family: "lexend deca";
+            src: url('design/fonts/LexendDeca-VariableFont_wght.ttf');
+        }
+        body {
+            background-color: hsl(233, 47%, 7%);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: hsl(233, 47%, 7%);
+            border-radius: 8px;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+        .image-container {
+            position: relative; /* Required for overlay */
+            width: 50%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .card img {
+            width: 100%; /* Full width for image */
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(128, 0, 128, 0.5); /* Transparent purple */
+            z-index: 1; /* Ensure overlay is above the image */
+        }
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            position: relative;
+            background-color: hsl(244, 38%, 16%);
+            z-index: 2; /* Ensure content is above the overlay */
+        }
+        .card-content h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        h1{
+            font-family: "inter" ;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        #pip{
+            font-family: "inter" ;
+            font-size: 13px;
+            font-weight: 400px;
+            color:  hsla(0, 0%, 100%, 0.6);
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        #shadow{
+            color: hsla(0, 0%, 100%, 0.6) ;
+            font-size: 12.8px;
+            font-family: "lexa deca";
+            justify-content: space-between;
+        }
+        .card-content h1 .insight {
+            color: #a45fc1; /* Change color of the word "insights" */
+            font-weight: bold;
+        }
+        .card-content p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 18px;
+            width: 100%; /* Full width for stats */
+        }
+        .stat-item {
+            text-align: center; /* Center align text */
+            flex: 1; /* Allow items to grow equally */
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column; /* Stack vertically */
+                align-items: center; /* Center align */
+                max-width: 100%;
+            }
+            .image-container {
+                width: 100%; /* Full width for image on mobile */
+            }
+            .card-content {
+                width: 100%; /* Full width for content on mobile */
+                text-align: center; /* Center align text */
+            }
+            .stats {
+                flex-direction: column; /* Stack vertically on mobile */
+                align-items: center; /* Center align items */
+                margin-top: 10px; /* Adjust margin */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="image-container">
+            <img src="images/image-header-desktop.jpg" alt="Business Insights">
+            <div class="overlay"></div>
+        </div>
+        <div class="card-content">
+            <h1>Get <span class="insight">insights</span> that help your business grow.</h1>
+            <p id="pip">Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <p>10k+</p>
+                    <p id="shadow">Companies</p>
+                </div>
+                <div class="stat-item">
+                    <p>314</p>
+                    <p id="shadow">Templates</p>
+                </div>
+                <div class="stat-item">
+                    <p>12M+</p>
+                    <p id="shadow">Queries</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
